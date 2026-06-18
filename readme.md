@@ -170,35 +170,65 @@ Create a folder named `config/` in your project's root directory, and create a f
 Configure the following mandatory keys:
 
 ```properties
-# Server Connection Settings
+# ===============================================
+# GENERAL SERVER CONFIGURATIONS
+# ===============================================
+# Public IP of the server where the emulator will run.
+# Use 127.0.0.1 for local testing.
 server.public.ip=127.0.0.1
-broker.serv1.name=Server 1
-broker.serv1.descr=Local Testing Gunbound Server
-broker.port=8372
-gameserver.port=7000
-buddy.port=7001
-buddy.udp.port=7002
 
-# Game Server Configuration
+# ===============================================
+# BROKER SERVER CONFIGURATIONS
+# ===============================================
+# Port that the Broker Server will use to accept initial connections.
+broker.port=8400
+broker.serv1.name=GunBound Legacy
+broker.serv1.descr=Avatar OFF
+
+# ===============================================
+# GAME SERVER CONFIGURATIONS
+# ===============================================
+# Port that the main Game Server will use.
+gameserver.port=8360
+
+# Probability of getting Dragon/Knight (hidden tanks)
 gameserver.tank.hidden.ratio=10
-gameserver.stage0_probability=50
 gameserver.goldfactor=100
 gameserver.scorefactor=100
-gameserver.eventtrigger=0
-gameserver.eventactprop=0
-gameserver.honkprice=100
-gameserver.balloonprice=50
-gameserver.colorprice=150
-gameserver.channelment=Welcome to the Server!
-gameserver.channeldaymsg=Message of the Day
-gameserver.channelafternoonmsg=Message of the Afternoon
-gameserver.channelnightmsg=Message of the Night
-gameserver.roomment=Have fun!
-gameserver.versionfirst=376
-gameserver.versionlast=404
-gameserver.funcrestrict=0
+gameserver.stage0_probability=5
+
+# Event settings
+gameserver.eventtrigger=1
+gameserver.eventactprop=50
+# Honk (megaphone) price
+gameserver.honkprice=10000
+# Balloon (chat bubble) price
+gameserver.balloonprice=50000
+# Talk text color price
+gameserver.colorprice=50000
+
+# PowerUser settings
+gameserver.superuseritem=204801
+
+gameserver.channelment=#GunBound Legacy Thor's Hammer
+gameserver.channeldaymsg=*Bom Dia
+gameserver.channelafternoonmsg=*Boa Tarde
+gameserver.channelnightmsg=*Boa Noite
+gameserver.roomment=&Jogue Limpo!
+
+gameserver.versionfirst=100
+gameserver.versionlast=900
 gameserver.passableauthority=0
-gameserver.superuseritem=0
+
+gameserver.funcrestrict=1040384
+
+# ===============================================
+# BUDDY SERVER CONFIGURATIONS
+# ===============================================
+# TCP Port that the Buddy Server (friends system) will use.
+buddy.port=8352
+# UDP Port for the Buddy Server chat/presence service.
+buddy.udp.port=8381
 
 # Database Credentials
 db.url=jdbc:mariadb://localhost:3306/gbth
