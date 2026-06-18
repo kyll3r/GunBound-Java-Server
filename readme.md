@@ -181,7 +181,7 @@ server.public.ip=127.0.0.1
 # BROKER SERVER CONFIGURATIONS
 # ===============================================
 # Port that the Broker Server will use to accept initial connections.
-broker.port=8400
+broker.port=8372
 broker.serv1.name=GunBound Legacy
 broker.serv1.descr=Avatar OFF
 
